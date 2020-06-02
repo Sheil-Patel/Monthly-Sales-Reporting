@@ -27,15 +27,12 @@ if __name__ == "__main__":
 
     sales_date = get_date_of_sales_report(info)
     
-    total = 0.0
-    for index, row in info.iterrows():
-        count = row["sales price"]
-        total += count
-    
+    total = info["sales price"].sum()
+
     grand_total = to_usd(total)
     
     print(sales_date)
-    print("TOTAL:", grand_total)    
+    print("TOTAL:", grand_total)
     #print(info.tail())
 
 
