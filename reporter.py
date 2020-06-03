@@ -18,21 +18,26 @@ def get_date_of_sales_report(info):
     parsed_string = f"Sales Report for: {month}-{year}"
     return parsed_string
 
+def find_total(info):
+     total = info["sales price"].sum() #Sums the "sales price" column
+     return total
 
 
-
-
+def top_selling_products(info):
+    highs = info.sort_values('sales price', ascending=False) #Sorts the column based off on ascending values
+    print("TOP SELLING PRODUCTS:")
+    print(highs.head(3)) #Selects top 3 items on list
 
 if __name__ == "__main__":
 
     sales_date = get_date_of_sales_report(info)
     
-    total = info["sales price"].sum()
+    total = find_total(info)
 
     grand_total = to_usd(total)
-    
+
     print(sales_date)
     print("TOTAL:", grand_total)
-    #print(info.tail())
 
+    top_selling_products(info)
 
