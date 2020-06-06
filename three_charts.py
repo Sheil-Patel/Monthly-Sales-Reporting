@@ -1,5 +1,5 @@
 # three_charts.py
-
+import matplotlib.pyplot as plt
 #
 # CHART 1 (PIE)
 #
@@ -14,7 +14,16 @@ print("----------------")
 print("GENERATING PIE CHART...")
 print(pie_data) # TODO: create a pie chart based on the pie_data
 
-#
+
+# Pie chart, where the slices will be ordered and plotted counter-clockwise:
+labels = ["Product A", "Product B", "Product C", "Product D"]
+sizes = [15, 30, 45, 10]
+
+fig1, ax1 = plt.subplots()
+ax1.pie(sizes, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90)
+ax1.axis("equal")  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+plt.show() # need to explicitly "show" the chart window
 # CHART 2 (LINE)
 #
 
