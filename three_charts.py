@@ -12,12 +12,16 @@ pie_data = [
 
 print("----------------")
 print("GENERATING PIE CHART...")
-print(pie_data) # TODO: create a pie chart based on the pie_data
-
+labels = []
+sizes = []
+for values in pie_data:
+    hi = values["company"]
+    labels.append(hi)
+    he = values["market_share"]
+    sizes.append(he)
 
 # Pie chart, where the slices will be ordered and plotted counter-clockwise:
-labels = ["Product A", "Product B", "Product C", "Product D"]
-sizes = [15, 30, 45, 10]
+
 
 fig1, ax1 = plt.subplots()
 ax1.pie(sizes, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90)
