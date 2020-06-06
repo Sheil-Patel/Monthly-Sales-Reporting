@@ -1,5 +1,7 @@
 # three_charts.py
 import matplotlib.pyplot as plt
+import numpy as np
+
 #
 # CHART 1 (PIE)
 #
@@ -44,8 +46,16 @@ line_data = [
 
 print("----------------")
 print("GENERATING LINE GRAPH...")
-print(line_data) # TODO: create a line graph based on the line_data
+x = []
+y = []
+for values in line_data:
+    hie = values["date"]
+    hii = values["stock_price_usd"]
+    x.append(hie)
+    y.append(hii)
 
+plt.plot(x, y)
+plt.show()
 #
 # CHART 3 (HORIZONTAL BAR)
 #
