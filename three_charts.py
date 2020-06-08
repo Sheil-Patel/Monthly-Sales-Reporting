@@ -72,4 +72,19 @@ bar_data = [
 
 print("----------------")
 print("GENERATING BAR CHART...")
-print(bar_data) # TODO: create a horizontal bar chart based on the bar_data
+
+genre = []
+viewers = []
+for value in bar_data:
+    so = value["genre"]
+    soo = value["viewers"]
+    genre.append(so)
+    viewers.append(soo)
+
+
+fig = plt.figure(figsize =(7,5))
+
+positions = [1, 2, 3, 4 ,5 ,6 ,7 ]
+plt.bar(positions,viewers, width = 0.5,)
+plt.xticks(positions, genre)
+plt.show()
